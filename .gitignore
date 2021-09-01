@@ -2,6 +2,8 @@
 
 # dependencies
 /node_modules
+/src/pages/admin
+/src/store/Product Detail
 /.pnp
 .pnp.js
 

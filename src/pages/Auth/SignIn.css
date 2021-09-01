@@ -1,0 +1,10 @@
+.login {
+    left: 0;
+}
+
+.btn {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    margin: 10px 0;
+}
