@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import "./ProductList.css";
-import NavBar from "../../components/NavBar/NavBar";
+import NavBar, { StyledNavLink } from "../../components/NavBar/NavBar";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchProductList } from "../../store/Product List/ProductListActions";
+import { NavLink } from "react-router-dom";
+import Button from "../../components/Button/Button";
 
 const ProductList = () => {
   const products = useSelector((state) => state.productList.products);
-  console.log(products);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -28,9 +29,16 @@ const ProductList = () => {
         <div className="row">
           {products.map((product) => (
             <div className="col-4" key={product.id}>
-              <img src={product.image} alt="" />
-              <h4>{product.title}</h4>
-              <p>${product.price}</p>
+              <StyledNavLink to={`/product-detail/${product.id}`}>
+                <div>
+                  <img src={product.image} alt="" />
+                </div>
+                <div className="title">
+                  <h4>{product.title}</h4>
+                  <p>${product.price}</p>
+                </div>
+                <Button className="btn">Add to Cart</Button>
+              </StyledNavLink>
             </div>
           ))}
         </div>

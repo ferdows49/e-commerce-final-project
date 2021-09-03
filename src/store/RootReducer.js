@@ -1,26 +1,23 @@
 import { combineReducers } from "redux";
-import persistCombineReducers from "redux-persist/es/persistCombineReducers";
 import persistReducer from "redux-persist/es/persistReducer";
 import { LoginReducer } from "./Auth/AuthReducers";
-import storage from 'redux-persist/lib/storage'
-import {ProductListReducer} from './Product List/ProductListReducers'
+import storage from "redux-persist/lib/storage";
+import { ProductListReducer } from "./Product List/ProductListReducers";
+import { ProductDetailReducer } from "./Product Detail/ProductDetailReducers";
+import { GetCartProductReducer } from "./Cart/CartReducers";
 
 const persistConfig = {
-    key: 'root',
-    storage: storage,
+  key: "root",
+  storage: storage,
 };
 
-// const persistedCombineReducers = persistCombineReducers({
-//     LoginReducer
-// });
+const LoginPersistedReducer = persistReducer(persistConfig, LoginReducer);
 
 const reducers = combineReducers({
-  LoginReducer,
-  productList: ProductListReducer
+  login: LoginPersistedReducer,
+  productList: ProductListReducer,
+  productDetails: ProductDetailReducer,
+  cartProducts: GetCartProductReducer
 });
 
-export const persistedReducer = persistReducer(
-  //   persistedCombineReducers,
-  persistConfig,
-  reducers
-);
+export default reducers;

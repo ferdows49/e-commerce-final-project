@@ -1,59 +1,86 @@
 .container {
-    max-width: 1300px;
-    margin: auto;
-    padding-left: 25px;
-    padding-right: 25px;
+  max-width: 1300px;
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .small-container {
-    max-width: 1080px;
-    margin: auto;
-    padding-left: 25px;
-    padding-right: 25px;
+  max-width: 1080px;
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .row {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .row-2 {
-    justify-content: space-between;
-    margin: 100px auto 50px;
+  justify-content: space-between;
+  margin: 100px auto 50px;
 }
 
 .col-4 {
-    flex-basis: 25%;
-    padding: 10px;
-    min-width: 200px;
-    margin-bottom: 50px;
-    transition: transform 0.5s;
+  width: 300px;
+  height: 500px;
+  box-shadow: 0 5px 10px gray;
+  padding: 20px;
+  min-width: 200px;
+  margin-bottom: 50px;
+  margin-left: 10px;
+  transition: transform 0.5s;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .col-4:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .col-4 img {
-    width: 100%;
+  width: 240px;
+  height: 340px;
 }
 
 .col-4 h4 {
-    color: #555;
-    font-weight: normal;
+  color: #555;
+  font-size: 25px;
+  font-weight: 500;
 }
 
 .col-4 p {
-    font-size: 14px;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 select {
-    border: 1px solid #ff523B;
-    padding: 5px;
+  border: 1px solid #ff523b;
+  padding: 5px;
 }
 
 select:focus {
-    outline: none;
+  outline: none;
+}
+
+.btn {
+  width: 100%;
+  margin: 0;
+}
+
+.title {
+  height: 80px;
+  width: 240px;
+}
+
+.title h4 {
+  white-space: nowrap;
+  width: 240px; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
 }

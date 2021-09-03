@@ -1,6 +1,5 @@
 import ProductListActionTypes from "./ProductListActionTypes"
 
-
 const initialState = {
     products: []
 }

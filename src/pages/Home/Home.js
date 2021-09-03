@@ -3,6 +3,7 @@ import HeaderImage from "../../assets/images/header/image1.png";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
+import Footer from "../../components/Footer/Footer";
 
 const StyledNavLink = styled(NavLink)`
   color: white;
@@ -32,6 +33,7 @@ const Home = () => {
             <img src={HeaderImage} alt="sports" />
           </div>
         </div>
+        {/* <Footer /> */}
       </div>
     </div>
   );

@@ -6,6 +6,7 @@
 }
 
 .account-page {
+    height: 100vh;
     background: linear-gradient(to bottom, #ffccff 18%, #ff99cc 90%);;
 }
 
