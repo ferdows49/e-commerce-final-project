@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Button from "../../components/Button/Button";
 import Input from "../../components/Input/Input";
 import NavBar from "../../components/NavBar/NavBar";
@@ -9,14 +9,29 @@ import { useSelector, useDispatch } from "react-redux";
 
 const Cart = () => {
   const [quantity, setQuantity] = useState(1);
-  const cartProducts = useSelector(store => store.cartProducts.cartProducts)
-  console.log(cartProducts)
+  const cartProducts = useSelector((store) => store.cartProducts.cartProducts);
+  const productList = useSelector((store) => store.productList.products);
+  console.log(cartProducts);
+  const userId = 1;
+  const cartProductId = cartProducts.map((cartProduct) =>
+    cartProduct.userId === userId
+      ? cartProduct.products.map((product) => product.productId)
+      : null
+  );
 
-  const dispatch = useDispatch()
-  
+  console.log(cartProductId)
+
+  const dispatch = useDispatch();
+
+  const cartProduct = productList.map(
+    (singleProduct) => singleProduct.id === cartProductId && singleProduct
+  );
+
+  console.log(cartProduct);
+
   useEffect(() => {
-    dispatch(GetCartProducts())
-  }, [dispatch])
+    dispatch(GetCartProducts());
+  }, [dispatch]);
 
   return (
     <div className="container">
@@ -28,41 +43,7 @@ const Cart = () => {
             <th>Quantity</th>
             <th>Subtotal</th>
           </tr>
-          <tr>
-            <td>
-              <div className="cart-info">
-                <img src={image} alt="" height="150px" />
-                <div className="product-info">
-                  <p>product name</p>
-                  <small>$50.25</small>
-                  <br />
-                  <Button>Remove</Button>
-                </div>
-              </div>
-            </td>
-            <td>
-              <Button
-                className="btn inc"
-                onClick={() => setQuantity(quantity + 1)}
-              >
-                +
-              </Button>
-              <p className="quantity">{quantity}</p>
-              <Button
-                className="btn dec"
-                onClick={() => {
-                  if (quantity === 1) {
-                    return;
-                  } else {
-                    setQuantity(quantity - 1);
-                  }
-                }}
-              >
-                -
-              </Button>
-            </td>
-            <td>$50.25</td>
-          </tr>
+          {/* {cartProducts.map()} */}
         </table>
         <div className="total-price">
           <table>

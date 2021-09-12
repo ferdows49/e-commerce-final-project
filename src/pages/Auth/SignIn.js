@@ -4,7 +4,7 @@ import Button from "../../components/Button/Button";
 import Form from "../../components/Form/Form";
 import Input from "../../components/Input/Input";
 import { useDispatch } from "react-redux";
-import { fetchLogin } from "../../store/Auth/AuthActions";
+import { LoginAction } from "../../store/Auth/AuthActions";
 import { NavLink } from "react-router-dom";
 
 const SignIn = () => {
@@ -19,7 +19,7 @@ const SignIn = () => {
       email,
       password
     }
-    dispatch(fetchLogin(user))
+    dispatch(LoginAction(user))
   };
 
   return (
@@ -39,6 +39,7 @@ const SignIn = () => {
       <Button type="submit" className="btn">
         Log In
       </Button>
+      <br />
       <NavLink to="">Forgot Password</NavLink>
     </Form>
   );

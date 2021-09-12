@@ -37,7 +37,7 @@ const ProductList = () => {
                   <h4>{product.title}</h4>
                   <p>${product.price}</p>
                 </div>
-                <Button className="btn">Add to Cart</Button>
+                <Button className="btn">Buy Now</Button>
               </StyledNavLink>
             </div>
           ))}

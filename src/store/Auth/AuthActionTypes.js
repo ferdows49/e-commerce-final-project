@@ -1,5 +1,6 @@
 const AuthActionTypes = {
-    LOGIN: 'LOGIN'
+    LOGIN: 'LOGIN',
+    SIGNUP: 'SIGNUP'
 }
 
 export default AuthActionTypes;

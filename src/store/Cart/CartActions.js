@@ -9,8 +9,8 @@ export const AddToCart = (item) => async (dispatch) => {
     })
 }
 
-export const GetCartProducts = () => async (dispatch) => {
-    const response = await axios.get(`http://localhost:8080/cart`)
+export const GetCartProducts = (userId) => async (dispatch) => {
+    const response = await axios.get(`https://fakestoreapi.com/carts`)
     dispatch({
         type: CartActionTypes.GET_CART_PRODUCTS,
         payload: response.data
